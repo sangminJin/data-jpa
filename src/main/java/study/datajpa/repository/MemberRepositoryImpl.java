@@ -1,7 +1,7 @@
 package study.datajpa.repository;
 
 import lombok.RequiredArgsConstructor;
-import study.datajpa.controller.entity.Member;
+import study.datajpa.entity.Member;
 
 import javax.persistence.EntityManager;
 import java.util.List;

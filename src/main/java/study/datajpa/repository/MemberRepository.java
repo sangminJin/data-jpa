@@ -2,10 +2,9 @@ package study.datajpa.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
-import study.datajpa.controller.entity.Member;
+import study.datajpa.entity.Member;
 import study.datajpa.dto.MemberDto;
 
 import javax.persistence.LockModeType;
