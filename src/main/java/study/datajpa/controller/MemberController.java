@@ -11,8 +11,6 @@ import study.datajpa.dto.MemberDto;
 import study.datajpa.entity.Member;
 import study.datajpa.repository.MemberRepository;
 
-import javax.annotation.PostConstruct;
-
 @RestController
 @RequiredArgsConstructor
 public class MemberController {
@@ -33,11 +31,11 @@ public class MemberController {
     @GetMapping("members")
     public Page<MemberDto> list(@PageableDefault(size = 5) Pageable pageable) {
         Page<Member> page = memberRepository.findAll(pageable);
-        Page<MemberDto> toMap = page.map(m -> new MemberDto(m.getId(), m.getUsername(), null));
+        Page<MemberDto> toMap = page.map(MemberDto::new);
         return toMap;
     }
 
-    @PostConstruct
+    // @PostConstruct
     public void init() {
         for(int i=0; i<100; i++) {
             memberRepository.save(new Member("user" + i, i));
